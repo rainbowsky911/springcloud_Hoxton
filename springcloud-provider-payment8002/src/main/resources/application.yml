@@ -1,5 +1,5 @@
 server:
-  port: 8001    #指定服务端口号
+  port: 8002    #指定服务端口号
 spring:
   application:
     name: springcloud-payment-service  #指定服务名称
