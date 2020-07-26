@@ -1,0 +1,14 @@
+server:
+  port: 8001    #指定服务端口号
+spring:
+  application:
+    name: springcloud-payment-service  #指定服务名称
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource          # 当前数据源操作类型
+    driver-class-name: com.mysql.jdbc.Driver             # mysql驱动包&useSSL=false
+    url: jdbc:mysql://localhost:3306/springcloud?useUnicode=true&characterEncoding=utf-8  #数据库地址
+    username: root  #数据库用户名
+    password: 123456  #数据库用户密码
+mybatis:
+  mapperLocations: classpath:mapper/*.xml   #mapper.xml文件扫描位置
+  type-aliases-package: com.wsh.springcloud.entity    # 所有Entity别名类所在包
