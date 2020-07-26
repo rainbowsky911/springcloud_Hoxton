@@ -10,6 +10,7 @@
         <module name="springcloud-api-commons" />
         <module name="springcloud-consumer-order80" />
         <module name="springcloud-eureka-server7001" />
+        <module name="springcloud-eureka-server7002" />
         <module name="springcloud-provider-payment8001" />
       </profile>
     </annotationProcessing>

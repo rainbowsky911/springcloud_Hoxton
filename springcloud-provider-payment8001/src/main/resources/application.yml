@@ -12,3 +12,10 @@ spring:
 mybatis:
   mapperLocations: classpath:mapper/*.xml   #mapper.xml文件扫描位置
   type-aliases-package: com.wsh.springcloud.entity    # 所有Entity别名类所在包
+eureka:
+  client:
+    register-with-eureka: true  #注册到Eureka注册中心
+    fetch-registry: true  #开启检索服务
+    service-url:
+#      defaultZone: http://localhost:7001/eureka/    #单机版Eureka注册中心
+      defaultZone: http://springcloud-eureka7001.com:7001/eureka/,http://springcloud-eureka7002.com:7002/eureka/   #集群版Eureka注册中心

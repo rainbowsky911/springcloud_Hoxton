@@ -3,6 +3,7 @@ package com.wsh.springcloud;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
 /**
  * @Description 主启动类
@@ -11,7 +12,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * 说明:
  */
 @SpringBootApplication
-//@EnableEurekaClient
+@EnableEurekaClient
 //@EnableDiscoveryClient
 @MapperScan("com.wsh.springcloud.mapper")
 public class PaymentServiceApplication {
