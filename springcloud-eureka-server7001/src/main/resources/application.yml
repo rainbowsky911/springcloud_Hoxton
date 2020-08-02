@@ -11,3 +11,6 @@ eureka:
     register-with-eureka: true   #false表示不向注册中心注册自己
     service-url:
       defaultZone: http://springcloud-eureka7002.com:7002/eureka/
+  server:
+    enable-self-preservation: true  #默认开启自我保护,false表示关闭自我保护模式,及时剔除不可用的服务实例
+#    eviction-interval-timer-in-ms: 2000
