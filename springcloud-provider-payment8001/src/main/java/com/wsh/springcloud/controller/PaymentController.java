@@ -7,8 +7,12 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.client.ServiceInstance;
+import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.*;
 
+import javax.annotation.Resource;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 @RestController
@@ -21,8 +25,8 @@ public class PaymentController {
     @Value("${server.port}")
     private String serverPort;
 
-//    @Resource
-//    private DiscoveryClient discoveryClient;
+    @Resource
+    private DiscoveryClient discoveryClient;
 
     @PostMapping(value = "/payment/save")
     public JsonResult save(@RequestBody Payment payment) {
@@ -47,20 +51,21 @@ public class PaymentController {
         }
     }
 
-//    @GetMapping(value = "/payment/discovery")
-//    public Object discovery() {
-//        List<String> services = discoveryClient.getServices();
-//        for (String element : services) {
-//            logger.info("*****element: " + element);
-//        }
-//
-//        List<ServiceInstance> instances = discoveryClient.getInstances("SPRINGCLOUD-PAYMENT-SERVICE");
-//        for (ServiceInstance instance : instances) {
-//            logger.info(instance.getServiceId() + "\t" + instance.getHost() + "\t" + instance.getPort() + "\t" + instance.getUri());
-//        }
-//
-//        return this.discoveryClient;
-//    }
+    @GetMapping(value = "/payment/discovery")
+    public Object discovery() {
+        //获取Eureka上面注册的服务列表
+        List<String> services = discoveryClient.getServices();
+        for (String service : services) {
+            logger.info("service: " + service);
+        }
+
+        //获取某个具体微服务的所有实例
+        List<ServiceInstance> instances = discoveryClient.getInstances("SPRINGCLOUD-PAYMENT-SERVICE");
+        for (ServiceInstance instance : instances) {
+            logger.info(instance.getServiceId() + "\t" + instance.getHost() + "\t" + instance.getPort() + "\t" + instance.getUri());
+        }
+        return this.discoveryClient;
+    }
 
     @GetMapping(value = "/payment/lb")
     public String getPaymentLB() {
