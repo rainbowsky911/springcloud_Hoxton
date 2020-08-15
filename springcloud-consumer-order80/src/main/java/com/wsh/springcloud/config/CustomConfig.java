@@ -16,7 +16,7 @@ public class CustomConfig {
 
     //注册到spring ioc容器中
     @Bean
-    @LoadBalanced  //开启负载均衡功能
+//    @LoadBalanced  //开启负载均衡功能
     public RestTemplate restTemplate() {
         return new RestTemplate();
     }

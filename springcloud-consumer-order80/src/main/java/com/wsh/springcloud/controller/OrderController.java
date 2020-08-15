@@ -2,13 +2,17 @@ package com.wsh.springcloud.controller;
 
 import com.wsh.springcloud.common.JsonResult;
 import com.wsh.springcloud.entity.Payment;
+import com.wsh.springcloud.loadbalance.CustomLoadBalancer;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
 import javax.annotation.Resource;
+import java.net.URI;
+import java.util.List;
 
 @RestController
 @Slf4j
@@ -22,8 +26,8 @@ public class OrderController {
     @Resource
     private RestTemplate restTemplate;
 
-    //    @Resource
-//    private LoadBalancer loadBalancer;
+    @Resource
+    private CustomLoadBalancer customLoadBalancer;
 
     @Resource
     private DiscoveryClient discoveryClient;
@@ -69,4 +73,17 @@ public class OrderController {
         String result = restTemplate.getForObject("http://localhost:8001" + "/payment/zipkin/", String.class);
         return result;
     }
+
+    @GetMapping("/consumer/payment/customLoadBalancer")
+    public String customLoadBalancer() {
+        List<ServiceInstance> instances = discoveryClient.getInstances("SPRINGCLOUD-PAYMENT-SERVICE");
+        if (instances == null || instances.size() <= 0) {
+            return null;
+        }
+        ServiceInstance serviceInstance = customLoadBalancer.getInstances(instances);
+        //获取服务提供者的URI
+        URI serviceInstanceUri = serviceInstance.getUri();
+        return restTemplate.getForObject(serviceInstanceUri + "/payment/customLoadBalancer", String.class);
+    }
+
 }

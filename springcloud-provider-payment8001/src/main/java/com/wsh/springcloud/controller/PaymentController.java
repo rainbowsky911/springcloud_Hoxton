@@ -67,9 +67,9 @@ public class PaymentController {
         return this.discoveryClient;
     }
 
-    @GetMapping(value = "/payment/lb")
-    public String getPaymentLB() {
-        return serverPort;
+    @GetMapping(value = "/payment/customLoadBalancer")
+    public String customLoadBalancer() {
+        return "当前服务实例端口号：" + serverPort;
     }
 
     @GetMapping(value = "/payment/feign/timeout")
