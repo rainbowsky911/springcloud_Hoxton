@@ -16,6 +16,7 @@
         <module>springcloud-provider-payment8002</module>
         <module>springcloud-provider-consul-payment8006</module>
         <module>springcloud-consumer-consul-order80</module>
+        <module>springcloud-consumer-feign-order80</module>
     </modules>
     <packaging>pom</packaging>
 

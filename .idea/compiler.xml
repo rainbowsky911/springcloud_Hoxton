@@ -9,6 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="springcloud-api-commons" />
         <module name="springcloud-consumer-consul-order80" />
+        <module name="springcloud-consumer-feign-order80" />
         <module name="springcloud-consumer-order80" />
         <module name="springcloud-eureka-server7001" />
         <module name="springcloud-eureka-server7002" />
