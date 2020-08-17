@@ -11,6 +11,7 @@
         <module name="springcloud-consumer-consul-order80" />
         <module name="springcloud-consumer-feign-hystrix-order80" />
         <module name="springcloud-consumer-feign-order80" />
+        <module name="springcloud-consumer-hystrix-dashboard9001" />
         <module name="springcloud-consumer-order80" />
         <module name="springcloud-eureka-server7001" />
         <module name="springcloud-eureka-server7002" />
