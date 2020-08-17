@@ -5,6 +5,7 @@ eureka:
     register-with-eureka: false
     service-url:
       defaultZone: http://springcloud-eureka7001.com:7001/eureka/,http://springcloud-eureka7002.com:7002/eureka/   #集群版Eureka注册中心
+#开启Feign断路器功能
 feign:
   hystrix:
     enabled: true

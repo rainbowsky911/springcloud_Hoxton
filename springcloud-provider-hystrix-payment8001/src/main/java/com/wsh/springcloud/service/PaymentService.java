@@ -1,6 +1,7 @@
 package com.wsh.springcloud.service;
 
 import cn.hutool.core.util.IdUtil;
+import com.netflix.hystrix.contrib.javanica.annotation.DefaultProperties;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
 import org.springframework.stereotype.Service;
@@ -9,6 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import java.util.concurrent.TimeUnit;
 
 @Service
+@DefaultProperties(defaultFallback = "commonDefaultFallback")
 public class PaymentService {
 
     public String paymentInfoSuccess(Integer id) {
@@ -33,6 +35,13 @@ public class PaymentService {
         }
         return "线程名称:  " + Thread.currentThread().getName() + ">>>>id:  " + id;
     }
+
+//    @HystrixCommand
+//    public String paymentInfoFail(Integer id) {
+//        String string = null;
+//        System.out.println(string.length());
+//        return "线程名称:  " + Thread.currentThread().getName() + ">>>>id:  " + id;
+//    }
 
     /**
      * Hystrix熔断方法（即调用失败回调方法）
@@ -59,6 +68,13 @@ public class PaymentService {
 
     public String paymentCircuitBreaker_fallback(@PathVariable("id") Integer id) {
         return "id 不能负数，请稍后再试，/(ㄒoㄒ)/~~   id: " + id;
+    }
+
+    /**
+     * 全局降级方法统一配置
+     */
+    public String commonDefaultFallback() {
+        return "[全局降级配置], sorry, the system is busy, please try again later!";
     }
 
 }

@@ -24,12 +24,11 @@ public class OrderHystrixController {
             @HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds", value = "1500")
     })
     public String paymentInfoFail(@PathVariable("id") Integer id) {
-        int age = 10 / 0;
         return paymentHystrixFeignClient.paymentInfoFail(id);
     }
 
     public String paymentTimeOutFallbackMethod(@PathVariable("id") Integer id) {
-        return "sorry,[" + id + "], the payment service is not available! \";";
+        return "sorry,[" + id + "],【springcloud-consumer-feign-hystrix-order80】 the payment service is not available! ";
     }
 
 }
