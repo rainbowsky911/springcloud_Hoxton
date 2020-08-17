@@ -1,12 +1,12 @@
 package com.wsh.springcloud.service;
 
-import cn.hutool.core.util.IdUtil;
 import com.netflix.hystrix.contrib.javanica.annotation.DefaultProperties;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PathVariable;
 
+import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 
 @Service
@@ -22,7 +22,6 @@ public class PaymentService {
      * fallbackMethod: 指定服务降级方法
      * commandProperties: 指定断路器属性，如下配置在三秒内正常访问，超过三秒将会执行降级方法paymentInfoFailFallback
      * 说明：服务提供方降级处理，设置自身调用超时时间的峰值，峰值内可以正常运行，超过了需要有降级方法处理，做服务降级Fallback
-     *
      */
     @HystrixCommand(fallbackMethod = "paymentInfoFailFallback", commandProperties = {
             @HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds", value = "3000")
@@ -47,27 +46,7 @@ public class PaymentService {
      * Hystrix熔断方法（即调用失败回调方法）
      */
     public String paymentInfoFailFallback(Integer id) {
-       return  "sorry,[ " + id + "], the hystrix payment service is not available! ";
-    }
-
-    //服务熔断
-    @HystrixCommand(fallbackMethod = "paymentCircuitBreaker_fallback", commandProperties = {
-            @HystrixProperty(name = "circuitBreaker.enabled", value = "true"),// 是否开启断路器
-            @HystrixProperty(name = "circuitBreaker.requestVolumeThreshold", value = "10"),// 请求次数
-            @HystrixProperty(name = "circuitBreaker.sleepWindowInMilliseconds", value = "10000"), // 时间窗口期
-            @HystrixProperty(name = "circuitBreaker.errorThresholdPercentage", value = "60"),// 失败率达到多少后跳闸
-    })
-    public String paymentCircuitBreaker(@PathVariable("id") Integer id) {
-        if (id < 0) {
-            throw new RuntimeException("id不能为负数");
-        }
-        String serialNumber = IdUtil.simpleUUID();
-
-        return Thread.currentThread().getName() + "\t" + "调用成功，流水号: " + serialNumber;
-    }
-
-    public String paymentCircuitBreaker_fallback(@PathVariable("id") Integer id) {
-        return "id 不能负数，请稍后再试，/(ㄒoㄒ)/~~   id: " + id;
+        return "sorry,[ " + id + "], the hystrix payment service is not available! ";
     }
 
     /**
@@ -75,6 +54,29 @@ public class PaymentService {
      */
     public String commonDefaultFallback() {
         return "[全局降级配置], sorry, the system is busy, please try again later!";
+    }
+
+
+    /**
+     * 测试服务熔断
+     * 这里配置的几个参数表示： 10秒内请求10次数，如果超过60%的请求都是失败的，那么断路器将会开启.
+     */
+    @HystrixCommand(fallbackMethod = "testCircuitBreakerFallback", commandProperties = {
+            @HystrixProperty(name = "circuitBreaker.enabled", value = "true"),// 是否开启断路器
+            @HystrixProperty(name = "circuitBreaker.requestVolumeThreshold", value = "10"),// 请求次数
+            @HystrixProperty(name = "circuitBreaker.sleepWindowInMilliseconds", value = "10000"), // 时间窗口期
+            @HystrixProperty(name = "circuitBreaker.errorThresholdPercentage", value = "60"),// 失败率达到多少后跳闸
+    })
+    public String testCircuitBreaker(@PathVariable("id") Integer id) {
+        if (id < 0) {
+            //抛出运行时异常，会调用服务降级方法testCircuitBreakerFallback
+            throw new RuntimeException("id不能为负数");
+        }
+        return "ID: " + UUID.randomUUID().toString();
+    }
+
+    public String testCircuitBreakerFallback(@PathVariable("id") Integer id) {
+        return "testCircuitBreaker【服务降级处理】，ID: " + id;
     }
 
 }
