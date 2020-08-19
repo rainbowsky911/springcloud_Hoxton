@@ -82,4 +82,13 @@ public class PaymentController {
     public String paymentZipkin() {
         return "hi ,i'am paymentzipkin server fall back，welcome to atguigu，O(∩_∩)O哈哈~";
     }
+
+    /**
+     * 测试gateway网关转发负载均衡转发
+     */
+    @GetMapping("/gatewayLoadBalance/{name}")
+    public String gatewayLoadBalance(@PathVariable("name") String name) {
+        return "hello, [gatewayLoadBalance] the name is :" + name + ", the server port is " + serverPort;
+    }
+
 }

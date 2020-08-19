@@ -1,6 +1,7 @@
 package com.wsh.springcloud.filter;
 
-import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.cloud.gateway.filter.GatewayFilterChain;
 import org.springframework.cloud.gateway.filter.GlobalFilter;
 import org.springframework.core.Ordered;
@@ -11,21 +12,19 @@ import reactor.core.publisher.Mono;
 
 import java.util.Date;
 
+//@Component
+public class MyLogGateWayFilter implements GlobalFilter, Ordered {
 
-@Component
-public class MyLogGateWayFilter implements GlobalFilter,Ordered
-{
+    private static final Logger logger = LoggerFactory.getLogger(MyLogGateWayFilter.class);
 
     @Override
-    public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain)
-    {
-        log.info("***********come in MyLogGateWayFilter:  "+new Date());
+    public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
+        logger.info("***********come in MyLogGateWayFilter:  " + new Date());
 
         String uname = exchange.getRequest().getQueryParams().getFirst("uname");
 
-        if(uname == null)
-        {
-            log.info("*******用户名为null，非法用户，o(╥﹏╥)o");
+        if (uname == null) {
+            logger.info("*******用户名为null，非法用户，o(╥﹏╥)o");
             exchange.getResponse().setStatusCode(HttpStatus.NOT_ACCEPTABLE);
             return exchange.getResponse().setComplete();
         }
@@ -34,8 +33,7 @@ public class MyLogGateWayFilter implements GlobalFilter,Ordered
     }
 
     @Override
-    public int getOrder()
-    {
+    public int getOrder() {
         return 0;
     }
 }
