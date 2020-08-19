@@ -91,4 +91,13 @@ public class PaymentController {
         return "hello, [gatewayLoadBalance] the name is :" + name + ", the server port is " + serverPort;
     }
 
+    /**
+     * 测试gateway网关Weight断言
+     */
+    @GetMapping("/gatewayWeightRoutePredicate/{name}")
+    public String gatewayWeightRoutePredicate(@PathVariable("name") String name) {
+        return "hello, [gatewayWeightRoutePredicate] the name is :" + name + ", the server port is " + serverPort;
+    }
+
+
 }

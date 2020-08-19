@@ -113,4 +113,84 @@ public class PaymentController {
         return "hello, [gatewayLoadBalance] the name is :" + name + ", the server port is " + serverPort;
     }
 
+    /**
+     * 测试gateway网关After断言
+     */
+    @GetMapping("/gatewayAfterRoutePredicate/{name}")
+    public String gatewayAfterRoutePredicate(@PathVariable("name") String name) {
+        return "hello, [gatewayAfterRoutePredicate] the name is :" + name;
+    }
+
+    /**
+     * 测试gateway网关Before断言
+     */
+    @GetMapping("/gatewayBeforeRoutePredicate/{name}")
+    public String gatewayBeforeRoutePredicate(@PathVariable("name") String name) {
+        return "hello, [gatewayBeforeRoutePredicate] the name is :" + name;
+    }
+
+    /**
+     * 测试gateway网关Between断言
+     */
+    @GetMapping("/gatewayBetweenRoutePredicate/{name}")
+    public String gatewayBetweenRoutePredicate(@PathVariable("name") String name) {
+        return "hello, [gatewayBetweenRoutePredicate] the name is :" + name;
+    }
+
+    /**
+     * 测试gateway网关Cookie断言
+     */
+    @GetMapping("/gatewayCookieRoutePredicate/{name}")
+    public String gatewayCookieRoutePredicate(@PathVariable("name") String name) {
+        return "hello, [gatewayCookieRoutePredicate] the name is :" + name;
+    }
+
+    /**
+     * 测试gateway网关Header断言
+     */
+    @GetMapping("/gatewayHeaderRoutePredicate/{name}")
+    public String gatewayHeaderRoutePredicate(@PathVariable("name") String name) {
+        return "hello, [gatewayHeaderRoutePredicate] the name is :" + name;
+    }
+
+    /**
+     * 测试gateway网关Host断言
+     */
+    @GetMapping("/gatewayHostRoutePredicate/{name}")
+    public String gatewayHostRoutePredicate(@PathVariable("name") String name) {
+        return "hello, [gatewayHostRoutePredicate] the name is :" + name;
+    }
+
+    /**
+     * 测试gateway网关Method断言
+     */
+    @GetMapping("/gatewayMethodRoutePredicate/{name}")
+    public String gatewayMethodRoutePredicate(@PathVariable("name") String name) {
+        return "hello, [gatewayMethodRoutePredicate] the name is :" + name;
+    }
+
+    /**
+     * 测试gateway网关Query断言
+     */
+    @GetMapping("/gatewayQueryRoutePredicate/{name}")
+    public String gatewayQueryRoutePredicate(@PathVariable("name") String name) {
+        return "hello, [gatewayQueryRoutePredicate] the name is :" + name;
+    }
+
+    /**
+     * 测试gateway网关RemoteAddr断言
+     */
+    @GetMapping("/gatewayRemoteAddrRoutePredicate/{name}")
+    public String gatewayRemoteAddrRoutePredicate(@PathVariable("name") String name) {
+        return "hello, [gatewayRemoteAddrRoutePredicate] the name is :" + name;
+    }
+
+    /**
+     * 测试gateway网关Weight断言
+     */
+    @GetMapping("/gatewayWeightRoutePredicate/{name}")
+    public String gatewayWeightRoutePredicate(@PathVariable("name") String name) {
+        return "hello, [gatewayWeightRoutePredicate] the name is :" + name + ", the server port is " + serverPort;
+    }
+
 }

@@ -17,6 +17,100 @@ spring:
           uri: lb://springcloud-payment-service  #springcloud-payment-service为服务提供者注册到Eureka的应用名称(application name)
           predicates:
             - Path=/gatewayLoadBalance/**         # 断言，路径相匹配的进行路由
+
+        ########################################【After Route Predicate】######################################################
+        #如下配置表示,在配置的时间之后访问localhost:9527/gatewayAfterRoutePredicate/**的时候,,gateway网关将请求分发到http://localhost:8001中去.
+        - id: payment_service_gatewayAfterRoutePredicate #路由ID
+          uri: http://localhost:8001 #指定payment8001的访问地址,即匹配后提供服务的路由地址
+          predicates:
+            - Path=/gatewayAfterRoutePredicate/**
+#            - After=2020-08-19T20:41:32.999+08:00[Asia/Shanghai]
+            - After=2020-08-29T20:41:32.999+08:00[Asia/Shanghai]
+
+
+        ########################################【Before Route Predicate】######################################################
+        #如下配置表示,在配置的时间之前访问localhost:9527/gatewayBeforeRoutePredicate/**的时候,gateway网关将请求分发到http://localhost:8001中去.
+        - id: payment_service_gatewayBeforeRoutePredicate #路由ID
+          uri: http://localhost:8001 #指定payment8001的访问地址,即匹配后提供服务的路由地址
+          predicates:
+            - Path=/gatewayBeforeRoutePredicate/**
+#            - Before=2020-08-10T20:41:32.999+08:00[Asia/Shanghai]
+            - Before=2020-08-29T20:41:32.999+08:00[Asia/Shanghai]
+
+        ########################################【Between Route Predicate】######################################################
+        #如下配置表示,在配置的时间之间访问localhost:9527/gatewayBetweenRoutePredicate/**的时候,gateway网关将请求分发到http://localhost:8001中去.
+        - id: payment_service_gatewayBetweenRoutePredicate #路由ID
+          uri: http://localhost:8001 #指定payment8001的访问地址,即匹配后提供服务的路由地址
+          predicates:
+            - Path=/gatewayBetweenRoutePredicate/**
+            - Between=2020-08-10T20:41:32.999+08:00[Asia/Shanghai], 2020-08-29T20:41:32.999+08:00[Asia/Shanghai]
+
+        ########################################【Cookie Route Predicate】######################################################
+        #如下配置表示,在访问localhost:9527/gatewayCookieRoutePredicate/**的时候需要携带cookie参数，并且值需要与正则表达式匹配,gateway网关将请求分发到http://localhost:8001中去.
+        - id: payment_service_gatewayCookieRoutePredicate #路由ID
+          uri: http://localhost:8001 #指定payment8001的访问地址,即匹配后提供服务的路由地址
+          predicates:
+            - Path=/gatewayCookieRoutePredicate/**
+            - Cookie=name, weishihuai
+
+        ########################################【Header Route Predicate】######################################################
+        #如下配置表示,在访问localhost:9527/gatewayHeaderRoutePredicate/**的时候请求头需要包含X-Request-Id属性，并且值需要与正则表达式匹配,gateway网关将请求分发到http://localhost:8001中去.
+        - id: payment_service_gatewayHeaderRoutePredicate #路由ID
+          uri: http://localhost:8001 #指定payment8001的访问地址,即匹配后提供服务的路由地址
+          predicates:
+            - Path=/gatewayHeaderRoutePredicate/**
+            - Header=X-Request-Id, \d+
+
+        ########################################【Host Route Predicate】######################################################
+        #如下配置表示,在访问localhost:9527/gatewayHostRoutePredicate/**的时候请求头需要包含X-Request-Id属性，并且值需要与正则表达式匹配,gateway网关将请求分发到http://localhost:8001中去.
+        - id: payment_service_gatewayHostRoutePredicate #路由ID
+          uri: http://localhost:8001 #指定payment8001的访问地址,即匹配后提供服务的路由地址
+          predicates:
+            - Path=/gatewayHostRoutePredicate/**
+            - Host=**.somehost.org,**.anotherhost.org
+
+        ########################################【Method Route Predicate】######################################################
+        #如下配置表示,在访问localhost:9527/gatewayMethodRoutePredicate/**只有是get请求,gateway网关将请求分发到http://localhost:8001中去.
+        - id: payment_service_gatewayMethodRoutePredicate #路由ID
+          uri: http://localhost:8001 #指定payment8001的访问地址,即匹配后提供服务的路由地址
+          predicates:
+            - Path=/gatewayMethodRoutePredicate/**
+            - Method=GET
+#            - Method=GET,POST
+#            - Method=POST
+
+        ########################################【Query Route Predicate】######################################################
+        #如下配置表示,在访问localhost:9527/gatewayQueryRoutePredicate/**请求中需要携带id参数，并且值要是整形类型,gateway网关将请求分发到http://localhost:8001中去.
+        - id: payment_service_gatewayQueryRoutePredicate #路由ID
+          uri: http://localhost:8001 #指定payment8001的访问地址,即匹配后提供服务的路由地址
+          predicates:
+            - Path=/gatewayQueryRoutePredicate/**
+#            - Query=green
+            - Query=id, \d+
+
+        ########################################【RemoteAddr Route Predicate】######################################################
+        #如下配置表示,在访问localhost:9527/gatewayRemoteAddrRoutePredicate/**请求的远程地址为127.0.0.1,gateway网关将请求分发到http://localhost:8001中去.
+        - id: payment_service_gatewayRemoteAddrRoutePredicate #路由ID
+          uri: http://localhost:8001 #指定payment8001的访问地址,即匹配后提供服务的路由地址
+          predicates:
+            - Path=/gatewayRemoteAddrRoutePredicate/**
+#            - RemoteAddr=127.0.0.1
+            - RemoteAddr=192.168.35.105
+
+        ########################################【Weight Route Predicate】######################################################
+        #如下配置表示,在访问localhost:9527/gatewayWeightRoutePredicate/**请求的远程地址为127.0.0.1,gateway网关将请求分发到http://localhost:8001中去.
+        #路径将把80%的流量转发到http://localhost:8001,并将20%的流量转发到http://localhost:8002
+        - id: payment_service8001_gatewayWeightRoutePredicate #路由ID
+          uri: http://localhost:8001 #指定payment8001的访问地址,即匹配后提供服务的路由地址
+          predicates:
+            - Path=/gatewayWeightRoutePredicate/**
+            - Weight=group1, 8
+        - id: payment_service8002_gatewayWeightRoutePredicate  #路由ID
+          uri: http://localhost:8002   #指定payment8002的访问地址,即匹配后提供服务的路由地址
+          predicates:
+            - Path=/gatewayWeightRoutePredicate/**
+            - Weight=group1, 2
+
       discovery:
         locator:
           enabled: true   #开启从注册中心动态创建路由的功能，利用微服务名进行路由
