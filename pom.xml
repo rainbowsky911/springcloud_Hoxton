@@ -21,6 +21,7 @@
         <module>springcloud-consumer-feign-hystrix-order80</module>
         <module>springcloud-consumer-hystrix-dashboard9001</module>
         <module>springcloud-apigateway-gateway9527</module>
+        <module>springcloud-apigateway-gateway9528</module>
     </modules>
     <packaging>pom</packaging>
 

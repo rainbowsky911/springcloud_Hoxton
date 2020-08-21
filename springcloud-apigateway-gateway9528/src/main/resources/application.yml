@@ -1,0 +1,103 @@
+server:
+  port: 9528
+spring:
+  application:
+    name: springcloud-gateway
+  cloud:
+    gateway:
+      routes:
+        ########################################【AddRequestHeader GatewayFilter添加请求头】######################################################
+        - id: payment_service8001_gatewayAddRequestHeader  #路由ID
+          uri: http://localhost:8001  #指定payment8001的访问地址,即匹配后提供服务的路由地址
+          predicates:
+            - Path=/gatewayAddRequestHeader/**
+          filters:
+            #将X-Request-red:blue头添加到所有匹配请求的下游请求头中
+            - AddRequestHeader=X-Request-red, blue
+
+        ########################################【AddRequestParameter GatewayFilter添加请求参数】######################################################
+        - id: payment_service8001_gatewayAddRequestParameter #路由ID
+          uri: http://localhost:8001  #指定payment8001的访问地址,即匹配后提供服务的路由地址
+          predicates:
+            - Path=/gatewayAddRequestParameter
+          filters:  #过滤器（filters：过滤器，过滤规则）
+            # 添加指定参数
+            - AddRequestParameter=name, weishihuai
+
+        ########################################【AddResponseHeader GatewayFilter添加响应头】######################################################
+        - id: payment_service8001_gatewayAddResponseHeader #路由ID
+          uri: http://localhost:8001  #指定payment8001的访问地址,即匹配后提供服务的路由地址
+          predicates:
+            - Path=/gatewayAddResponseHeader
+          filters:  #过滤器（filters：过滤器，过滤规则）
+            # 添加指定参数
+            - AddResponseHeader=X-Response-Red, Blue
+
+        ########################################【Hystrix GatewayFilter断路器】######################################################
+        - id: payment_service8001_gatewayHystrixGatewayFilter #路由ID
+          uri: http://localhost:8001  #指定payment8001的访问地址,即匹配后提供服务的路由地址
+          predicates:
+            - Path=/gatewayHystrixGatewayFilter
+          filters:  #过滤器（filters：过滤器，过滤规则）
+            - name: Hystrix
+              args:
+                name: fallbackcmd
+                fallbackUri: forward:/fallback
+
+        - id: payment_service8001_outerFallback-gatewayHystrix #路由ID
+          uri: http://localhost:8001  #指定payment8001的访问地址,即匹配后提供服务的路由地址
+          predicates:
+            - Path=/gatewayOuterFallbackHystrixGatewayFilter
+          filters:  #过滤器（filters：过滤器，过滤规则）
+            - name: Hystrix
+              args:
+                name: fallbackcmd
+                fallbackUri: forward:/gatewayFallback  #此处需要与下面- Path=/gatewayFallback对应
+        - id: outer-gateway-fallback
+          uri: http://localhost:8001
+          predicates:
+            #fallback时调用的方法 http://localhost:8001/gatewayFallback
+            - Path=/gatewayFallback
+
+        ########################################【PrefixPath  GatewayFilter路径前缀过滤器工厂】######################################################
+        - id: payment_service8001_prefixPathGatewayFilter #路由ID
+          uri: http://localhost:8001  #指定payment8001的访问地址,即匹配后提供服务的路由地址
+          predicates:
+            - Path=/prefixPathGatewayFilter
+          filters:  #过滤器（filters：过滤器，过滤规则）
+            #将把/api作为所有匹配请求的路径的前缀。因此，对/prefixPathGatewayFilter的请求将被发送到/api/prefixPathGatewayFilter
+            - PrefixPath=/api
+
+        ########################################【StripPrefix GatewayFilter Factory路径截取过滤器工厂】######################################################
+        #如下配置表示,在访问localhost:9528/api/gatewayStripPrefix/**请求的,gateway网关将/api截取掉,请求分发到http://localhost:8001中去.
+        - id: payment_service8001_gatewayStripPrefix #路由ID
+          uri: http://localhost:8001  #指定payment8001的访问地址,即匹配后提供服务的路由地址
+          predicates:
+            # 转发地址格式为 uri/gatewayStripPrefix, /api 部分会被下面的过滤器给截取掉.
+            - Path=/api/gatewayStripPrefix/**
+          filters:  #过滤器（filters：过滤器，过滤规则）
+            # 截取路径位数  即截取/api
+            - StripPrefix=1
+
+        ########################################【RewritePath GatewayFilter Factory路径截取过滤器工厂】######################################################
+        #如下配置表示,在访问localhost:9528/api/rewritePathGatewayFilter/**请求的,gateway网关将路径重写为localhost:9528/rewritePathGatewayFilter,然后请求分发到http://localhost:8001中去.
+        - id: payment_service8001_rewritePathGatewayFilter #路由ID
+          uri: http://localhost:8001  #指定payment8001的访问地址,即匹配后提供服务的路由地址
+          predicates:
+            - Path=/api/rewritePathGatewayFilter
+          filters:  #过滤器（filters：过滤器，过滤规则）
+            - RewritePath=/api(?<segment>/?.*), $\{segment}
+
+      discovery:
+        locator:
+          enabled: true   #开启从注册中心动态创建路由的功能，利用微服务名进行路由
+eureka:
+  instance:
+    hostname: springcloud-gateway-service
+  client:
+    service-url:
+      register-with-eureka: true
+      fetch-registry: true
+      defaultZone: http://springcloud-eureka7001.com:7001/eureka/,http://springcloud-eureka7002.com:7002/eureka/   #集群版Eureka注册中心
+
+

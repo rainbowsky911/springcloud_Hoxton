@@ -12,6 +12,7 @@ import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -191,6 +192,82 @@ public class PaymentController {
     @GetMapping("/gatewayWeightRoutePredicate/{name}")
     public String gatewayWeightRoutePredicate(@PathVariable("name") String name) {
         return "hello, [gatewayWeightRoutePredicate] the name is :" + name + ", the server port is " + serverPort;
+    }
+
+    /**
+     * 测试gateway网关截取请求
+     */
+    @GetMapping("/gatewayStripPrefix/{name}")
+    public String gatewayStripPrefix(@PathVariable("name") String name) {
+        return "hello, [gatewayStripPrefix] the name is :" + name + ", the server port is " + serverPort;
+    }
+
+    /**
+     * 测试gateway网关转发指定地址并添加请求参数
+     */
+    @GetMapping("/gatewayAddRequestParameter")
+    public String gatewayAddRequestParameter(HttpServletRequest request) {
+        String name = request.getParameter("name");
+        return "hello, [gatewayAddRequestParameter] the name is :" + name;
+    }
+
+    /**
+     * 测试gateway网关转发指定地址并传入参数
+     */
+    @GetMapping("/gatewayAddRequestHeader")
+    public String gatewayAddRequestHeader(HttpServletRequest request) {
+        String value = request.getHeader("X-Request-red");
+        return "hello, [gatewayAddRequestHeader] the header[X-Request-red] is :" + value;
+    }
+
+    /**
+     * 测试gateway网关转发指定地址并添加响应头
+     */
+    @GetMapping("/gatewayAddResponseHeader")
+    public String gatewayAddResponseHeader() {
+        return "hello, [gatewayAddResponseHeader] ";
+    }
+
+    /**
+     * 测试gateway网关断路器过滤器
+     */
+    @GetMapping("/gatewayHystrixGatewayFilter")
+    public String gatewayHystrixGatewayFilter() {
+        return "hello, [gatewayHystrixGatewayFilter] ";
+    }
+
+    /**
+     * 外部网关失败回调
+     */
+    @GetMapping("/gatewayFallback")
+    public String gatewayFallback() {
+        return "sorry,this is outer gateway fallback ";
+    }
+
+    /**
+     * 外部网关失败回调
+     */
+    @GetMapping("/gatewayOuterFallbackHystrixGatewayFilter")
+    public String gatewayOuterFallbackHystrixGatewayFilter() throws InterruptedException {
+        //手动触发网关超时熔断
+        TimeUnit.SECONDS.sleep(10);
+        return "hello,[gatewayOuterFallbackHystrixGatewayFilter]";
+    }
+
+    /**
+     * 测试路径前缀网关过滤器工厂
+     */
+    @GetMapping("/api/prefixPathGatewayFilter")
+    public String prefixPathGatewayFilter() {
+        return "hello,[prefixPathGatewayFilter]";
+    }
+
+    /**
+     * 测试路径重写网关过滤器工厂
+     */
+    @GetMapping("/rewritePathGatewayFilter")
+    public String rewritePathGatewayFilter() {
+        return "hello, [rewritePathGatewayFilter]";
     }
 
 }
