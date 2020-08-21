@@ -270,4 +270,13 @@ public class PaymentController {
         return "hello, [rewritePathGatewayFilter]";
     }
 
+    /**
+     * 测试路径重写网关过滤器工厂
+     */
+    @GetMapping("/customRequestTimeFilter")
+    public String customRequestTimeFilter(HttpServletRequest request) {
+        String name = request.getParameter("name");
+        return "hello, [customRequestTimeFilter], 接收到的请求参数name:" + name;
+    }
+
 }
