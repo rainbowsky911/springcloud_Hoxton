@@ -9,6 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="springcloud-api-commons" />
         <module name="springcloud-apigateway-gateway9527" />
+        <module name="springcloud-apigateway-gateway9528" />
         <module name="springcloud-consumer-consul-order80" />
         <module name="springcloud-consumer-feign-hystrix-order80" />
         <module name="springcloud-consumer-feign-order80" />

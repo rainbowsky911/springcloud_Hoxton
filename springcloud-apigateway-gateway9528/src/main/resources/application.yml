@@ -88,6 +88,22 @@ spring:
           filters:  #过滤器（filters：过滤器，过滤规则）
             - RewritePath=/api(?<segment>/?.*), $\{segment}
 
+        ##########################################【测试自定义权限过滤器】#################################################
+        - id: payment_service8001_customAuthFilter #路由ID
+          uri: http://localhost:8001  #指定payment8001的访问地址,即匹配后提供服务的路由地址
+          predicates:
+            - Path=/customAuthFilter/**
+          filters:  #过滤器（filters：过滤器，过滤规则）
+            - CustomAuth
+
+        ##########################################【自定义过滤器工厂】#################################################
+        - id: payment_service8001_customGatewayFilterFactory #路由ID
+          uri: http://localhost:8001  #指定payment8001的访问地址,即匹配后提供服务的路由地址
+          predicates:
+            - Path=/customGatewayFilterFactory/**
+          filters:  #过滤器（filters：过滤器，过滤规则）
+            - CustomRequestTime=true
+
       discovery:
         locator:
           enabled: true   #开启从注册中心动态创建路由的功能，利用微服务名进行路由

@@ -271,12 +271,28 @@ public class PaymentController {
     }
 
     /**
-     * 测试路径重写网关过滤器工厂
+     * 测试记录请求时间过滤器
      */
     @GetMapping("/customRequestTimeFilter")
     public String customRequestTimeFilter(HttpServletRequest request) {
         String name = request.getParameter("name");
         return "hello, [customRequestTimeFilter], 接收到的请求参数name:" + name;
+    }
+
+    /**
+     * 测试自定义权限网关过滤器
+     */
+    @GetMapping("/customAuthFilter/{name}")
+    public String customAuthFilter(@PathVariable("name") String name) {
+        return "hello, [customAuthFilter] the name is :" + name + ", the server port is " + serverPort;
+    }
+
+    /**
+     * 测试自定义过滤器工厂
+     */
+    @GetMapping("/customGatewayFilterFactory/{name}")
+    public String customGatewayFilterFactory(@PathVariable("name") String name) {
+        return "hello, [customGatewayFilterFactory] the name is :" + name + ", the server port is " + serverPort;
     }
 
 }
