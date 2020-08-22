@@ -295,4 +295,12 @@ public class PaymentController {
         return "hello, [customGatewayFilterFactory] the name is :" + name + ", the server port is " + serverPort;
     }
 
+    /**
+     * 测试自定义全局过滤器
+     */
+    @GetMapping("/customGatewayGlobalFilter/{name}")
+    public String customGatewayGlobalFilter(@PathVariable("name") String name) {
+        return "hello, [customGatewayGlobalFilter] the name is :" + name + ", the server port is " + serverPort;
+    }
+
 }
