@@ -110,9 +110,29 @@ spring:
           predicates:
             - Path=/customGatewayGlobalFilter/**
 
+        ##########################################【测试RequestRateLimiter限流】#################################################
+        - id: payment_service8001_requestRateLimiter #路由ID
+          uri: http://localhost:8001  #指定payment8001的访问地址,即匹配后提供服务的路由地址
+          predicates:
+            - Path=/requestRateLimiter/**
+          filters:
+            - name: RequestRateLimiter
+              args:
+                #配置RequestRateLimiter限流过滤器涉及的参数
+                redis-rate-limiter.replenishRate: 10  #令牌桶每秒填充平均速率
+                redis-rate-limiter.burstCapacity: 20  #令牌桶总容量
+                redis-rate-limiter.requestedTokens: 1  #每个请求从桶中取出的令牌的数量
+                key-resolver: '#{@hostNameAddressKeyResolver}' #用于限流的键的解析器的 Bean 对象的名字。它使用 SpEL 表达式根据#{@beanName}从 Spring 容器中获取 Bean 对象
+#                key-resolver: '#{@userKeyResolver}' #用于限流的键的解析器的 Bean 对象的名字。它使用 SpEL 表达式根据#{@beanName}从 Spring 容器中获取 Bean 对象
+#                key-resolver: '#{@uriKeyResolver}' #用于限流的键的解析器的 Bean 对象的名字。它使用 SpEL 表达式根据#{@beanName}从 Spring 容器中获取 Bean 对象
       discovery:
         locator:
           enabled: true   #开启从注册中心动态创建路由的功能，利用微服务名进行路由
+  redis:
+    #配置redis的信息
+    host: localhost
+    port: 6379
+    database: 0
 eureka:
   instance:
     hostname: springcloud-gateway-service

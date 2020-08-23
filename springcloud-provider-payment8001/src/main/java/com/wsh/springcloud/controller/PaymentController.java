@@ -303,4 +303,12 @@ public class PaymentController {
         return "hello, [customGatewayGlobalFilter] the name is :" + name + ", the server port is " + serverPort;
     }
 
+    /**
+     * 测试RequestRateLimiter限流
+     */
+    @GetMapping("/requestRateLimiter/{name}")
+    public String requestRateLimiter(@PathVariable("name") String name) {
+        return "hello, [requestRateLimiter] the name is :" + name + ", the server port is " + serverPort;
+    }
+
 }
