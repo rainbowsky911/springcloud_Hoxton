@@ -9,7 +9,7 @@ import reactor.core.publisher.Mono;
  * @Description 自定义URI KeyResolver
  * @Date 2020/8/23 21:01
  * @Author weishihuai
- * 说明:
+ * 说明: 获取请求地址的uri作为限流key
  */
 @Component
 public class UriKeyResolver implements KeyResolver {

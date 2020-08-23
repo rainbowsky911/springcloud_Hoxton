@@ -9,7 +9,7 @@ import reactor.core.publisher.Mono;
  * @Description 自定义主机名称 KeyResolver
  * @Date 2020/8/23 21:00
  * @Author weishihuai
- * 说明:
+ * 说明: 获取请求用户ip作为限流key
  */
 @Component
 public class HostNameAddressKeyResolver implements KeyResolver {

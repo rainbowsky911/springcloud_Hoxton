@@ -9,7 +9,7 @@ import reactor.core.publisher.Mono;
  * @Description 自定义用户 KeyResolver
  * @Date 2020/8/23 21:02
  * @Author weishihuai
- * 说明:
+ * 说明: 获取请求用户id作为限流key
  */
 @Component
 public class UserKeyResolver implements KeyResolver {
