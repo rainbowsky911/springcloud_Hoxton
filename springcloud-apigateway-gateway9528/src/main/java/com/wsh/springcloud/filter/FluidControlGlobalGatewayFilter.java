@@ -30,7 +30,7 @@ import java.util.concurrent.ConcurrentHashMap;
  * @author: weishihuai
  * @date: 2020/8/22 11:30
  */
-@Component
+//@Component
 public class FluidControlGlobalGatewayFilter implements GlobalFilter, Ordered {
     private static final Logger logger = LoggerFactory.getLogger(FluidControlGlobalGatewayFilter.class);
     /**
