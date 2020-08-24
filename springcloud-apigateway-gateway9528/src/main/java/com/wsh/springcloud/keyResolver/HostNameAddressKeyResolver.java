@@ -1,7 +1,8 @@
 package com.wsh.springcloud.keyResolver;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.cloud.gateway.filter.ratelimit.KeyResolver;
-import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 import org.springframework.web.server.ServerWebExchange;
 import reactor.core.publisher.Mono;
@@ -13,10 +14,14 @@ import reactor.core.publisher.Mono;
  * 说明: 获取请求用户ip作为限流key
  */
 @Component
-@Primary
 public class HostNameAddressKeyResolver implements KeyResolver {
+    private static final Logger logger = LoggerFactory.getLogger(HostNameAddressKeyResolver.class);
+
     @Override
     public Mono<String> resolve(ServerWebExchange exchange) {
-        return Mono.just(exchange.getRequest().getRemoteAddress().getAddress().getHostAddress());
+        String hostAddress = exchange.getRequest().getRemoteAddress().getAddress().getHostAddress();
+        logger.info("IP address: {}", hostAddress);
+        //将用户IP地址作为限流Key
+        return Mono.just(hostAddress);
     }
 }

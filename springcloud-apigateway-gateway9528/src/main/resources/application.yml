@@ -122,8 +122,8 @@ spring:
                 redis-rate-limiter.replenishRate: 1  #令牌桶每秒填充平均速率
                 redis-rate-limiter.burstCapacity: 50  #令牌桶总容量
                 redis-rate-limiter.requestedTokens: 1  #每个请求从桶中取出的令牌的数量
-                key-resolver: '#{@hostNameAddressKeyResolver}' #用于限流的键的解析器的 Bean 对象的名字。它使用 SpEL 表达式根据#{@beanName}从 Spring 容器中获取 Bean 对象
-#                key-resolver: '#{@userKeyResolver}' #用于限流的键的解析器的 Bean 对象的名字。它使用 SpEL 表达式根据#{@beanName}从 Spring 容器中获取 Bean 对象
+#                key-resolver: '#{@hostNameAddressKeyResolver}' #用于限流的键的解析器的 Bean 对象的名字。它使用 SpEL 表达式根据#{@beanName}从 Spring 容器中获取 Bean 对象
+                key-resolver: '#{@userKeyResolver}' #用于限流的键的解析器的 Bean 对象的名字。它使用 SpEL 表达式根据#{@beanName}从 Spring 容器中获取 Bean 对象
 #                key-resolver: '#{@uriKeyResolver}' #用于限流的键的解析器的 Bean 对象的名字。它使用 SpEL 表达式根据#{@beanName}从 Spring 容器中获取 Bean 对象
       discovery:
         locator:
