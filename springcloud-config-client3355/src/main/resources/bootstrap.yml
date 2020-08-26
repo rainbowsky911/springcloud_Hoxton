@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: springcloud-config-client
+  cloud:
+    config:
+      #      uri: http://localhost:3344/   #指定Config Server服务配置中心的地址
+
+      #配置环境
+      #dev为开发环境配置文件
+      #test为测试环境
+      #pro为正式环境
+      profile: dev
+      label: master  #指定配置文件的分支名称
+      discovery:
+        enabled: true  #开启通过服务访问config-server的功能
+        service-id: springcloud-config-server  #指定Config Server服务注册到Eureka中的微服务名称(即config-server的application-name)
+server:
+  port: 3355
+eureka:
+  client:
+    service-url:
+      defaultZone: http://springcloud-eureka7001.com:7001/eureka/,http://springcloud-eureka7002.com:7002/eureka/   #集群版Eureka注册中心
