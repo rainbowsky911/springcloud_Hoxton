@@ -20,3 +20,9 @@ eureka:
   client:
     service-url:
       defaultZone: http://springcloud-eureka7001.com:7001/eureka/,http://springcloud-eureka7002.com:7002/eureka/   #集群版Eureka注册中心
+#暴露监控端点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh,info,health
