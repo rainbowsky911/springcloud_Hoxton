@@ -3,8 +3,6 @@ spring:
     name: springcloud-config-client
   cloud:
     config:
-      #      uri: http://localhost:3344/   #指定Config Server服务配置中心的地址
-
       #配置环境
       #dev为开发环境配置文件
       #test为测试环境
@@ -20,7 +18,7 @@ spring:
     username: guest
     port: 5672
 server:
-  port: 3355
+  port: 3366
 eureka:
   client:
     service-url:
@@ -31,3 +29,4 @@ management:
     web:
       exposure:
         include: refresh,info,health,bus-refresh
+
