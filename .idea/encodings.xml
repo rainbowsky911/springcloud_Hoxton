@@ -6,6 +6,7 @@
     <file url="file://$PROJECT_DIR$/springcloud-apigateway-gateway9527" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springcloud-apigateway-gateway9528" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springcloud-config-client3355" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springcloud-config-client3366" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springcloud-config-server3344" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springcloud-consumer-consul-order80" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springcloud-consumer-feign-hystrix-order80" charset="UTF-8" />
@@ -18,6 +19,7 @@
     <file url="file://$PROJECT_DIR$/springcloud-provider-hystrix-payment8001" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springcloud-provider-payment8001" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springcloud-provider-payment8002" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springcloud-stream-rabbitmq-provider8801" charset="UTF-8" />
     <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>

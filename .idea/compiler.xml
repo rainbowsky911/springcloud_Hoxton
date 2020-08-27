@@ -11,6 +11,7 @@
         <module name="springcloud-apigateway-gateway9527" />
         <module name="springcloud-apigateway-gateway9528" />
         <module name="springcloud-config-client3355" />
+        <module name="springcloud-config-client3366" />
         <module name="springcloud-config-server3344" />
         <module name="springcloud-consumer-consul-order80" />
         <module name="springcloud-consumer-feign-hystrix-order80" />
@@ -23,6 +24,7 @@
         <module name="springcloud-provider-hystrix-payment8001" />
         <module name="springcloud-provider-payment8001" />
         <module name="springcloud-provider-payment8002" />
+        <module name="springcloud-stream-rabbitmq-provider8801" />
       </profile>
     </annotationProcessing>
   </component>
