@@ -4,32 +4,26 @@ spring:
   application:
     name: springcloud-stream-rabbitmq-provider
   cloud:
-      stream:
-        binders: # 在此处配置要绑定的rabbitmq的服务信息
-          defaultRabbit: # 表示定义的名称，用于binding整合
-            type: rabbit # 消息组件类型
-            environment: # 设置rabbitmq的相关的环境配置
-              spring:
-                rabbitmq:
-                  host: localhost
-                  port: 5672
-                  username: guest
-                  password: guest
-        bindings: # 服务的整合处理
-          output: # 这个名字是一个通道的名称
-            destination: studyExchange # 表示要使用的Exchange名称定义
-            content-type: application/json # 设置消息类型，本次为json，文本则设置“text/plain”
-            binder: defaultRabbit # 设置要绑定的消息服务的具体设置
+    stream:
+      binders: # 在此处配置要绑定的rabbitmq的服务信息
+        rabbitmq_binder: # binder绑定器名称，用于binding整合
+          type: rabbit # 消息组件类型 如果消息中间件是kafka,则type:kafka
+          environment: # rabbitmq相关环境配置
+            spring:
+              rabbitmq:
+                host: localhost  #rabbitmq主机
+                port: 5672 #rabbitmq端口
+                username: guest #rabbitmq用户名
+                password: guest #rabbitmq用户密码
+      bindings: # 服务的整合处理
+        output: # 输出通道,表示消息生产方
+          destination: rabbitmq_stream_exchange   # 指定输出的交换器名称
+          content-type: application/json  # 设置消息类型，本次为json，文本则设置“text/plain”
+          binder: rabbitmq_binder   # 指定binder的名称,需与上面spring.cloud.stream.binders.xxx中的xxx绑定器名称对应
 eureka:
-  client: # 客户端进行Eureka注册的配置
+  client:
     service-url:
       defaultZone: http://springcloud-eureka7001.com:7001/eureka/,http://springcloud-eureka7002.com:7002/eureka/   #集群版Eureka注册中心
-  instance:
-    lease-renewal-interval-in-seconds: 2 # 设置心跳的时间间隔（默认是30秒）
-    lease-expiration-duration-in-seconds: 5 # 如果现在超过了5秒的间隔（默认是90秒）
-    instance-id: springcloud-stream-rabbitmq-provider8801.com  # 在信息列表时显示主机名称
-    prefer-ip-address: true     # 访问的路径变为IP地址
-
 
 
 

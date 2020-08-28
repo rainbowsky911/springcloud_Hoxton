@@ -15,10 +15,8 @@ import java.util.UUID;
  * @Description 消息发送实现类
  * @Date 2020/8/27 21:38
  * @Author weishihuai
- * 说明:
+ * 说明: @EnableBinding表示信道channel和exchange绑定在一起.
  */
-//定义消息的发送管道
-//指信道channel和exchange绑定在一起
 @EnableBinding(Source.class)
 public class MessageProviderImpl implements IMessageProvider {
 
@@ -28,13 +26,14 @@ public class MessageProviderImpl implements IMessageProvider {
      * 消息发送管道
      */
     @Resource
-    private MessageChannel messageChannel;
+    private MessageChannel output;
 
     @Override
     public String sendMessage() {
         String uuid = UUID.randomUUID().toString();
-        messageChannel.send(MessageBuilder.withPayload(uuid).build());
+        output.send(MessageBuilder.withPayload(uuid).build());
         logger.info("消息发送者发送消息: {}", uuid);
         return "消息发送者发送消息: " + uuid;
     }
+
 }

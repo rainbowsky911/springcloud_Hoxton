@@ -1,0 +1,27 @@
+server:
+  port: 8802
+spring:
+  application:
+    name: springcloud-stream-rabbitmq-consumer
+  cloud:
+    stream:
+      binders:
+        rabbitmq_binder:  # binder绑定器名称，用于binding整合
+          type: rabbit # 消息组件类型 如果消息中间件是kafka,则type:kafka
+          environment: # 设置rabbitmq的相关的环境配置
+            spring:
+              rabbitmq:
+                host: localhost  #rabbitmq主机
+                port: 5672 #rabbitmq端口
+                username: guest #rabbitmq用户名
+                password: guest #rabbitmq用户密码
+      bindings: # 服务的整合处理
+        input: # 输入通道,表示消息消费方
+          destination: rabbitmq_stream_exchange  # 指定接收的交换器名称,需与消息发送方的destination对应上
+          content-type: application/json # 设置消息类型，本次为对象json，如果是文本则设置“text/plain”
+          binder: rabbitmq_binder # 指定binder的名称,需与上面spring.cloud.stream.binders.xxx对应中的xxx对应
+          group: group1
+eureka:
+  client:
+    service-url:
+      defaultZone: http://springcloud-eureka7001.com:7001/eureka/,http://springcloud-eureka7002.com:7002/eureka/   #集群版Eureka注册中心
