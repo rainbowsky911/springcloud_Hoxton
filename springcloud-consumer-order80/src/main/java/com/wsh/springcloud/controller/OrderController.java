@@ -52,26 +52,9 @@ public class OrderController {
         }
     }
 
-//    @GetMapping(value = "/consumer/payment/lb")
-//    public String getPaymentLB() {
-//        List<ServiceInstance> instances = discoveryClient.getInstances("CLOUD-PAYMENT-SERVICE");
-//
-//        if (instances == null || instances.size() <= 0) {
-//            return null;
-//        }
-//
-//        ServiceInstance serviceInstance = loadBalancer.instances(instances);
-//        URI uri = serviceInstance.getUri();
-//
-//        return restTemplate.getForObject(uri + "/payment/lb", String.class);
-//
-//    }
-
-    // ====================> zipkin+sleuth
-    @GetMapping("/consumer/payment/zipkin")
-    public String paymentZipkin() {
-        String result = restTemplate.getForObject("http://localhost:8001" + "/payment/zipkin/", String.class);
-        return result;
+    @GetMapping("/consumer/payment/zipkin/{name}")
+    public String paymentZipkin(@PathVariable("name") String name) {
+        return restTemplate.getForObject("http://localhost:8001" + "/payment/zipkin/" + name, String.class);
     }
 
     @GetMapping("/consumer/payment/customLoadBalancer")

@@ -19,7 +19,10 @@
     <file url="file://$PROJECT_DIR$/springcloud-provider-hystrix-payment8001" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springcloud-provider-payment8001" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springcloud-provider-payment8002" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springcloud-stream-rabbitmq-consumer8802" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springcloud-stream-rabbitmq-consumer8803" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springcloud-stream-rabbitmq-provider8801" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springcloud-stream-rabbitmq-provider8804" charset="UTF-8" />
     <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>

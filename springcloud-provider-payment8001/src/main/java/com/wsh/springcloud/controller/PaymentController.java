@@ -84,12 +84,6 @@ public class PaymentController {
         return serverPort;
     }
 
-    @GetMapping("/payment/zipkin")
-    public String paymentZipkin() {
-        return "hi ,i'am paymentzipkin server fall back，welcome to atguigu，O(∩_∩)O哈哈~";
-    }
-
-
     /**
      * 测试gateway网关转发请求简单示例
      */
@@ -309,6 +303,14 @@ public class PaymentController {
     @GetMapping("/requestRateLimiter/{name}")
     public String requestRateLimiter(@PathVariable("name") String name) {
         return "hello, [requestRateLimiter] the name is :" + name + ", the server port is " + serverPort;
+    }
+
+    /**
+     * 测试zipkin服务链路跟踪
+     */
+    @GetMapping("/payment/zipkin/{name}")
+    public String paymentZipkin(@PathVariable("name") String name) {
+        return "hello, [paymentZipkin] the name is :" + name + ", the server port is " + serverPort;
     }
 
 }
