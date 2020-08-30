@@ -29,6 +29,7 @@
         <module name="springcloud-stream-rabbitmq-provider8801" />
         <module name="springcloud-stream-rabbitmq-provider8804" />
         <module name="springcloudalibaba-consumer-nacos-order83" />
+        <module name="springcloudalibaba-nacos-config-server3377" />
         <module name="springcloudalibaba-provider-payment9001" />
         <module name="springcloudalibaba-provider-payment9002" />
       </profile>

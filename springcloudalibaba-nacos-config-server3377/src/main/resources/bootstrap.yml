@@ -1,0 +1,15 @@
+server:
+  port: 3377
+spring:
+  application:
+    name: springcloudalibaba-nacos-config-server
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848   #Nacos服务注册中心地址
+      config:
+        server-addr: localhost:8848   #Nacos作为配置中心地址
+        file-extension: yaml    #指定yaml格式的配置 (可选值：yaml、properties)
+#        group: PROD_GROUP
+        group: TEST_GROUP   #表示读取哪个分组的配置文件
+        namespace: prod-namespace #指定命令空间的ID (这里没有使用自动生成的UUID的命令空间ID，是自定义的)
