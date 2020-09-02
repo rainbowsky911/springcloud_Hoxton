@@ -33,6 +33,7 @@
         <module>springcloudalibaba-provider-payment9002</module>
         <module>springcloudalibaba-consumer-nacos-order83</module>
         <module>springcloudalibaba-nacos-config-server3377</module>
+        <module>springcloudalibaba-sentinel-service8401</module>
     </modules>
     <packaging>pom</packaging>
 
