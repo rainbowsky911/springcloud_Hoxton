@@ -32,6 +32,7 @@
         <module name="springcloudalibaba-nacos-config-server3377" />
         <module name="springcloudalibaba-provider-payment9001" />
         <module name="springcloudalibaba-provider-payment9002" />
+        <module name="springcloudalibaba-sentinel-service8401" />
       </profile>
     </annotationProcessing>
   </component>
