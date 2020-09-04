@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.concurrent.TimeUnit;
+
 @RestController
 public class SentinelController {
 
@@ -47,5 +49,30 @@ public class SentinelController {
         logger.info("SentinelController>>>>>testB() execute....");
         return sentinelService.sentinelChain();
     }
+
+    @GetMapping("/testRt")
+    public String testRt() {
+        try {
+            TimeUnit.SECONDS.sleep(1);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return "testRt..";
+    }
+
+    @GetMapping("/testExceptionRate")
+    public String testExceptionRate() {
+        String string = null;
+        logger.info(string.toString());
+        return "testExceptionRate..";
+    }
+
+
+    @GetMapping("/testExceptionCount")
+    public String testExceptionCount() {
+        int i = 10 / 0;
+        return "testExceptionRate..";
+    }
+
 
 }
