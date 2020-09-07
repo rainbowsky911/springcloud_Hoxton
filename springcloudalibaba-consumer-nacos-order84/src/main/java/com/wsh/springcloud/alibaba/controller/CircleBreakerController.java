@@ -107,8 +107,9 @@ public class CircleBreakerController {
     private PaymentFeignClient paymentFeignClient;
 
     @GetMapping(value = "/consumer/openfeign/payment/{id}")
-    public JsonResult<Payment> payment(@PathVariable("id") Long id) {
-        return paymentFeignClient.payment(id);
+    public Object payment(@PathVariable("id") Long id) {
+        Object payment = paymentFeignClient.payment(id);
+        return payment;
     }
 
 }

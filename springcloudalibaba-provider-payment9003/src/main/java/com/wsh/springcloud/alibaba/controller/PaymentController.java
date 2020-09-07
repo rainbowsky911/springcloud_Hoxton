@@ -26,7 +26,7 @@ public class PaymentController {
     }
 
     @GetMapping(value = "/payment/{id}")
-    public JsonResult<Payment> payment(@PathVariable("id") Long id) {
+    public Object payment(@PathVariable("id") Long id) {
         Payment payment = hashMap.get(id);
         return new JsonResult(200, "serial: " + payment.getSerial() + ",serverPort:  " + serverPort, payment);
     }

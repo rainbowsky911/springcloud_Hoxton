@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class PaymentFeignClientFallback implements PaymentFeignClient {
     @Override
-    public JsonResult<Payment> payment(Long id) {
+    public Object payment(Long id) {
         return new JsonResult<>(500, "服务降级返回,---PaymentFallbackService", new Payment(id, "errorSerial"));
     }
 }

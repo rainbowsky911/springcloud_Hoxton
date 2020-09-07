@@ -17,6 +17,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 public interface PaymentFeignClient {
 
     @GetMapping(value = "/payment/{id}")
-    JsonResult<Payment> payment(@PathVariable("id") Long id);
+    Object payment(@PathVariable("id") Long id);
 
 }
