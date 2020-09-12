@@ -37,6 +37,11 @@
         <module>springcloudalibaba-provider-payment9003</module>
         <module>springcloudalibaba-provider-payment9004</module>
         <module>springcloudalibaba-consumer-nacos-order84</module>
+        <module>springcloudalibab-seata-order-service2001</module>
+        <module>springcloud-seata-storage-service2002</module>
+        <module>springcloudalibaba-seata-account-service2003</module>
+        <module>springcloudalibaba-seata-order-service2001</module>
+        <module>springcloudalibaba-seata-storage-service2002</module>
     </modules>
     <packaging>pom</packaging>
 

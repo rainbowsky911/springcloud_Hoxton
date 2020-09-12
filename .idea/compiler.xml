@@ -35,6 +35,9 @@
         <module name="springcloudalibaba-provider-payment9002" />
         <module name="springcloudalibaba-provider-payment9003" />
         <module name="springcloudalibaba-provider-payment9004" />
+        <module name="springcloudalibaba-seata-account-service2003" />
+        <module name="springcloudalibaba-seata-order-service2001" />
+        <module name="springcloudalibaba-seata-storage-service2002" />
         <module name="springcloudalibaba-sentinel-service8401" />
       </profile>
     </annotationProcessing>
