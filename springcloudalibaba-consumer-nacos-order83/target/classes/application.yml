@@ -1,0 +1,15 @@
+server:
+  port: 83 #服务端口号
+spring:
+  application:
+    name: springcloudalibaba-consumer-nacos-order
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848  #指定nacos服务端地址
+
+#消费者将要去访问的微服务名称(注册成功进nacos的微服务提供者)
+service-url:
+  provider-payment: http://springcloudalibaba-provider-payment   #名字对应到服务提供者application.name
+
+

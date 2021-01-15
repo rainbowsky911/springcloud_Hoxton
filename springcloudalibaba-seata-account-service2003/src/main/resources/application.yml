@@ -14,7 +14,7 @@ spring:
     driver-class-name: com.mysql.jdbc.Driver
     url: jdbc:mysql://localhost:3306/seata_account
     username: root
-    password: root
+    password: 514730
 feign:
   hystrix:
     enabled: false
