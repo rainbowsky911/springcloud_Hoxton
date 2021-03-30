@@ -1,5 +1,6 @@
 package com.wsh.springcloud.alibaba.controller;
 
+import com.wsh.springcloud.alibaba.feign.PaymentFeignClient;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -22,6 +23,9 @@ public class OrderNacosController {
     @Resource
     private RestTemplate restTemplate;
 
+    @Resource
+    private PaymentFeignClient paymentFeignClient;
+
     /**
      * 获取到服务提供者URL
      */
@@ -31,6 +35,11 @@ public class OrderNacosController {
     @GetMapping(value = "/consumer/payment/nacos/{name}")
     public String paymentInfo(@PathVariable("name") String name) {
         return restTemplate.getForObject(paymentProviderURL + "/payment/nacos/" + name, String.class);
+    }
+
+    @GetMapping(value = "/consumer/payment/feign/{name}")
+    public String paymentInfo2(@PathVariable("name") String name) {
+        return "feign调用"+paymentFeignClient.getPayment(name);
     }
 
 }

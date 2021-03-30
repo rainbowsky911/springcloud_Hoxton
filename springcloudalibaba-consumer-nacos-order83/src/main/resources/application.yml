@@ -8,6 +8,15 @@ spring:
       discovery:
         server-addr: localhost:8848  #指定nacos服务端地址
 
+fegin:
+  httpclient:
+    #让Feign使用apache httlclient做请求,而不是默认的urlconttion
+    enabled: true
+    #Feign的最大连接数
+    max-connections: 200
+    #Feign单个路径的最大连接数
+    max-connections-per-route: 50
+
 #消费者将要去访问的微服务名称(注册成功进nacos的微服务提供者)
 service-url:
   provider-payment: http://springcloudalibaba-provider-payment   #名字对应到服务提供者application.name
