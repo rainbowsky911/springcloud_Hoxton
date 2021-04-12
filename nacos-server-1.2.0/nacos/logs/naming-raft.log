@@ -1,0 +1,40 @@
+2021-04-13 01:15:43,086 INFO initializing Raft sub-system
+
+2021-04-13 01:15:43,087 INFO raft notifier started
+
+2021-04-13 01:15:43,088 INFO finish loading all datums, size: 0 cost 2 ms.
+
+2021-04-13 01:15:43,090 INFO cache loaded, datum count: 0, current term: 0
+
+2021-04-13 01:15:43,090 INFO finish to load data from disk, cost: 4 ms.
+
+2021-04-13 01:15:43,092 INFO timer started: leader timeout ms: 15000, heart-beat timeout ms: 5000
+
+2021-04-13 01:15:43,012 INFO server list is updated, new: 1 servers: [{"adWeight":0,"alive":false,"ip":"192.168.131.1","key":"192.168.131.1:0","lastRefTime":0,"servePort":0,"site":"unknown","weight":1}]
+
+2021-04-13 01:15:43,097 INFO raft peers changed: [{"adWeight":0,"alive":false,"ip":"192.168.131.1","key":"192.168.131.1:0","lastRefTime":0,"lastRefTimeStr":"","servePort":0,"site":"unknown","weight":1}]
+
+2021-04-13 01:15:44,425 INFO add listener: com.alibaba.nacos.naming.domains.meta.00-00---000-NACOS_SWITCH_DOMAIN-000---00-00
+
+2021-04-13 01:15:44,432 INFO add listener: com.alibaba.nacos.naming.domains.meta.
+
+2021-04-13 01:15:48,009 INFO server list is updated, new: 1 servers: [{"adWeight":0,"alive":false,"ip":"192.168.131.1","key":"192.168.131.1:8848","lastRefTime":0,"lastRefTimeStr":"","servePort":8848,"site":"unknown","weight":1}]
+
+2021-04-13 01:15:48,009 INFO server list is updated, dead: 1, servers: [{"adWeight":0,"alive":false,"ip":"192.168.131.1","key":"192.168.131.1:0","lastRefTime":0,"lastRefTimeStr":"","servePort":0,"site":"unknown","weight":1}]
+
+2021-04-13 01:15:48,009 INFO raft peers changed: [{"adWeight":0,"alive":false,"ip":"192.168.131.1","key":"192.168.131.1:8848","lastRefTime":0,"lastRefTimeStr":"","servePort":8848,"site":"unknown","weight":1}]
+
+2021-04-13 01:15:49,098 INFO leader timeout, start voting,leader: {"heartbeatDueMs":5000,"ip":"192.168.131.1:8848","leaderDueMs":17055,"state":"FOLLOWER","term":0,"voteFor":""}, term: 0
+
+2021-04-13 01:15:51,013 INFO raft peers changed: [{"adWeight":0,"alive":false,"ip":"192.168.131.1","key":"192.168.131.1:8848","lastRefTime":0,"lastRefTimeStr":"","servePort":8848,"site":"unknown","weight":1}]
+
+2021-04-13 01:21:08,179 INFO add listener: com.alibaba.nacos.naming.iplist.public##DEFAULT_GROUP@@serverAddr
+
+2021-04-13 01:22:16,262 INFO add listener: com.alibaba.nacos.naming.iplist.public##DEFAULT_GROUP@@springcloudalibaba-seata-account-service
+
+2021-04-13 01:32:24,171 INFO add listener: com.alibaba.nacos.naming.iplist.public##DEFAULT_GROUP@@springcloudalibab-seata-order-service
+
+2021-04-13 01:32:53,872 INFO add listener: com.alibaba.nacos.naming.iplist.public##DEFAULT_GROUP@@springcloudalibaba-seata-storage-service
+
+2021-04-13 01:32:53,872 INFO add listener: com.alibaba.nacos.naming.iplist.public##DEFAULT_GROUP@@springcloudalibaba-seata-storage-service
+

@@ -27,14 +27,15 @@ public class AccountServiceImpl implements AccountService {
     /**
      * 扣减账户余额
      */
+    @Override
     public void decreaseAccount(Long userId, BigDecimal money) {
         logger.info("账户服务扣减余额[decreaseAccount] start....." + new Date());
 
         //feign调用默认调用超时时间为1秒，这里模拟休眠20秒，肯定调用超时
         //模拟超时异常，全局事务回滚
         try {
-            TimeUnit.SECONDS.sleep(20);
-        } catch (InterruptedException e) {
+          //  TimeUnit.SECONDS.sleep(20);
+        } catch (Exception e) {
             e.printStackTrace();
         }
 

@@ -1,0 +1,128 @@
+2021-04-13 01:21:09,210 INFO DEFAULT_GROUP@@serverAddr is changed, add it to push queue.
+
+2021-04-13 01:22:17,264 INFO DEFAULT_GROUP@@springcloudalibaba-seata-account-service is changed, add it to push queue.
+
+2021-04-13 01:32:25,173 INFO DEFAULT_GROUP@@springcloudalibab-seata-order-service is changed, add it to push queue.
+
+2021-04-13 01:32:54,874 INFO DEFAULT_GROUP@@springcloudalibaba-seata-storage-service is changed, add it to push queue.
+
+2021-04-13 01:43:10,290 INFO DEFAULT_GROUP@@springcloudalibab-seata-order-service is changed, add it to push queue.
+
+2021-04-13 01:43:25,381 INFO DEFAULT_GROUP@@springcloudalibab-seata-order-service is changed, add it to push queue.
+
+2021-04-13 01:43:33,508 INFO DEFAULT_GROUP@@springcloudalibab-seata-order-service is changed, add it to push queue.
+
+2021-04-13 01:46:34,231 INFO DEFAULT_GROUP@@serverAddr is changed, add it to push queue.
+
+2021-04-13 01:46:34,231 INFO serviceName: DEFAULT_GROUP@@serverAddr changed, schedule push for: 192.168.181.1:53402, agent: Nacos-Java-Client:v1.1.1, key: 192.168.181.1,53402,4476422891800
+
+2021-04-13 01:46:34,232 INFO send udp packet: 192.168.181.1,53402,4476422891800
+
+2021-04-13 01:46:34,232 INFO serviceName: DEFAULT_GROUP@@serverAddr changed, schedule push for: 192.168.181.1:59822, agent: Nacos-Java-Client:v1.1.1, key: 192.168.181.1,59822,4476422891800
+
+2021-04-13 01:46:34,232 INFO send udp packet: 192.168.181.1,59822,4476422891800
+
+2021-04-13 01:46:34,232 INFO serviceName: DEFAULT_GROUP@@serverAddr changed, schedule push for: 192.168.181.1:58271, agent: Nacos-Java-Client:v1.1.1, key: 192.168.181.1,58271,4476422891800
+
+2021-04-13 01:46:34,232 INFO send udp packet: 192.168.181.1,58271,4476422891800
+
+2021-04-13 01:46:34,238 INFO received ack: {"type": "push-ack", "lastRefTime":"4476422891800", "data":""} from: 192.168.181.1:53402, cost: 6 ms, unacked: 2, total push: 3
+
+2021-04-13 01:46:34,238 INFO received ack: {"type": "push-ack", "lastRefTime":"4476422891800", "data":""} from: 192.168.181.1:59822, cost: 6 ms, unacked: 1, total push: 3
+
+2021-04-13 01:46:34,238 INFO received ack: {"type": "push-ack", "lastRefTime":"4476422891800", "data":""} from: 192.168.181.1:58271, cost: 6 ms, unacked: 0, total push: 3
+
+2021-04-13 01:49:20,429 INFO DEFAULT_GROUP@@springcloudalibab-seata-order-service is changed, add it to push queue.
+
+2021-04-13 01:49:28,142 INFO DEFAULT_GROUP@@springcloudalibab-seata-order-service is changed, add it to push queue.
+
+2021-04-13 01:50:37,557 INFO DEFAULT_GROUP@@springcloudalibaba-seata-account-service is changed, add it to push queue.
+
+2021-04-13 01:50:37,557 INFO serviceName: DEFAULT_GROUP@@springcloudalibaba-seata-account-service changed, schedule push for: 192.168.181.1:55958, agent: Nacos-Java-Client:v1.1.1, key: 192.168.181.1,55958,4719749240000
+
+2021-04-13 01:50:37,557 INFO send udp packet: 192.168.181.1,55958,4719749240000
+
+2021-04-13 01:50:37,559 INFO received ack: {"type": "push-ack", "lastRefTime":"4719749240000", "data":""} from: 192.168.181.1:55958, cost: 2 ms, unacked: 0, total push: 4
+
+2021-04-13 01:50:52,565 INFO DEFAULT_GROUP@@springcloudalibaba-seata-account-service is changed, add it to push queue.
+
+2021-04-13 01:50:52,565 INFO serviceName: DEFAULT_GROUP@@springcloudalibaba-seata-account-service changed, schedule push for: 192.168.181.1:55958, agent: Nacos-Java-Client:v1.1.1, key: 192.168.181.1,55958,4734756847600
+
+2021-04-13 01:50:52,565 INFO send udp packet: 192.168.181.1,55958,4734756847600
+
+2021-04-13 01:50:52,567 INFO received ack: {"type": "push-ack", "lastRefTime":"4734756847600", "data":""} from: 192.168.181.1:55958, cost: 2 ms, unacked: 0, total push: 5
+
+2021-04-13 01:51:05,406 INFO DEFAULT_GROUP@@springcloudalibaba-seata-account-service is changed, add it to push queue.
+
+2021-04-13 01:51:05,406 INFO serviceName: DEFAULT_GROUP@@springcloudalibaba-seata-account-service changed, schedule push for: 192.168.181.1:55958, agent: Nacos-Java-Client:v1.1.1, key: 192.168.181.1,55958,4747597920500
+
+2021-04-13 01:51:05,406 INFO send udp packet: 192.168.181.1,55958,4747597920500
+
+2021-04-13 01:51:05,408 INFO received ack: {"type": "push-ack", "lastRefTime":"4747597920500", "data":""} from: 192.168.181.1:55958, cost: 2 ms, unacked: 0, total push: 6
+
+2021-04-13 01:51:50,771 INFO DEFAULT_GROUP@@springcloudalibab-seata-order-service is changed, add it to push queue.
+
+2021-04-13 01:52:04,803 INFO DEFAULT_GROUP@@springcloudalibab-seata-order-service is changed, add it to push queue.
+
+2021-04-13 01:52:05,602 INFO DEFAULT_GROUP@@springcloudalibaba-seata-storage-service is changed, add it to push queue.
+
+2021-04-13 01:52:20,539 INFO DEFAULT_GROUP@@springcloudalibaba-seata-storage-service is changed, add it to push queue.
+
+2021-04-13 01:53:02,586 INFO DEFAULT_GROUP@@springcloudalibaba-seata-account-service is changed, add it to push queue.
+
+2021-04-13 01:53:17,593 INFO DEFAULT_GROUP@@springcloudalibaba-seata-account-service is changed, add it to push queue.
+
+2021-04-13 01:53:32,585 INFO DEFAULT_GROUP@@springcloudalibaba-seata-account-service is changed, add it to push queue.
+
+2021-04-13 01:53:32,585 INFO serviceName: DEFAULT_GROUP@@springcloudalibaba-seata-account-service changed, schedule push for: 192.168.181.1:57961, agent: Nacos-Java-Client:v1.1.1, key: 192.168.181.1,57961,4894776964800
+
+2021-04-13 01:53:32,585 INFO send udp packet: 192.168.181.1,57961,4894776964800
+
+2021-04-13 01:53:32,590 INFO received ack: {"type": "push-ack", "lastRefTime":"4894776964800", "data":""} from: 192.168.181.1:57961, cost: 5 ms, unacked: 0, total push: 7
+
+2021-04-13 01:56:22,758 INFO DEFAULT_GROUP@@springcloudalibab-seata-order-service is changed, add it to push queue.
+
+2021-04-13 01:56:22,833 INFO DEFAULT_GROUP@@springcloudalibaba-seata-storage-service is changed, add it to push queue.
+
+2021-04-13 01:56:22,833 INFO serviceName: DEFAULT_GROUP@@springcloudalibaba-seata-storage-service changed, schedule push for: 192.168.181.1:57961, agent: Nacos-Java-Client:v1.1.1, key: 192.168.181.1,57961,5065024827800
+
+2021-04-13 01:56:22,833 INFO send udp packet: 192.168.181.1,57961,5065024827800
+
+2021-04-13 01:56:32,834 INFO retry to push data, key: 192.168.181.1,57961,5065024827800
+
+2021-04-13 01:56:32,834 INFO send udp packet: 192.168.181.1,57961,5065024827800
+
+2021-04-13 01:56:37,623 INFO DEFAULT_GROUP@@springcloudalibaba-seata-account-service is changed, add it to push queue.
+
+2021-04-13 01:56:42,835 INFO retry to push data, key: 192.168.181.1,57961,5065024827800
+
+2021-04-13 01:56:42,835 WARN max re-push times reached, retry times 2, key: 192.168.181.1,57961,5065024827800
+
+2021-04-13 01:56:47,985 INFO DEFAULT_GROUP@@springcloudalibaba-seata-account-service is changed, add it to push queue.
+
+2021-04-13 01:57:00,325 INFO DEFAULT_GROUP@@springcloudalibab-seata-order-service is changed, add it to push queue.
+
+2021-04-13 01:57:38,385 INFO DEFAULT_GROUP@@springcloudalibaba-seata-storage-service is changed, add it to push queue.
+
+2021-04-13 01:57:38,385 INFO serviceName: DEFAULT_GROUP@@springcloudalibaba-seata-storage-service changed, schedule push for: 192.168.181.1:50584, agent: Nacos-Java-Client:v1.1.1, key: 192.168.181.1,50584,5140576587000
+
+2021-04-13 01:57:38,385 INFO send udp packet: 192.168.181.1,50584,5140576587000
+
+2021-04-13 01:57:38,388 INFO received ack: {"type": "push-ack", "lastRefTime":"5140576587000", "data":""} from: 192.168.181.1:50584, cost: 3 ms, unacked: 0, total push: 9
+
+2021-04-13 02:01:53,075 INFO DEFAULT_GROUP@@springcloudalibaba-seata-account-service is changed, add it to push queue.
+
+2021-04-13 02:02:50,171 INFO DEFAULT_GROUP@@springcloudalibaba-seata-storage-service is changed, add it to push queue.
+
+2021-04-13 02:02:50,171 INFO DEFAULT_GROUP@@springcloudalibaba-seata-storage-service is changed, add it to push queue.
+
+2021-04-13 02:02:52,682 INFO DEFAULT_GROUP@@springcloudalibaba-seata-account-service is changed, add it to push queue.
+
+2021-04-13 02:02:55,573 INFO DEFAULT_GROUP@@springcloudalibab-seata-order-service is changed, add it to push queue.
+
+2021-04-13 02:03:05,178 INFO DEFAULT_GROUP@@springcloudalibaba-seata-storage-service is changed, add it to push queue.
+
+2021-04-13 02:03:07,686 INFO DEFAULT_GROUP@@springcloudalibaba-seata-account-service is changed, add it to push queue.
+
+2021-04-13 02:03:10,577 INFO DEFAULT_GROUP@@springcloudalibab-seata-order-service is changed, add it to push queue.
+

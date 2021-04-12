@@ -1,0 +1,160 @@
+2021-04-13 01:21:08,207 INFO DEFAULT_GROUP@@serverAddr {SYNC} {IP-NEW} cluster: default, new ips size: 1, content: [192.168.181.1:8091:unknown:default_1.0_true_false_default]
+
+2021-04-13 01:21:08,209 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@serverAddr, ips: 192.168.181.1:8091_true,
+
+2021-04-13 01:22:16,262 INFO DEFAULT_GROUP@@springcloudalibaba-seata-account-service {SYNC} {IP-NEW} cluster: DEFAULT, new ips size: 1, content: [192.168.131.1:2003:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2021-04-13 01:22:16,262 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@springcloudalibaba-seata-account-service, ips: 192.168.131.1:2003_true,
+
+2021-04-13 01:22:16,263 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@springcloudalibaba-seata-account-service, ips: 192.168.131.1:2003_true,
+
+2021-04-13 01:32:24,171 INFO DEFAULT_GROUP@@springcloudalibab-seata-order-service {SYNC} {IP-NEW} cluster: DEFAULT, new ips size: 1, content: [192.168.131.1:2001:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2021-04-13 01:32:24,172 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@springcloudalibab-seata-order-service, ips: 192.168.131.1:2001_true,
+
+2021-04-13 01:32:24,172 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@springcloudalibab-seata-order-service, ips: 192.168.131.1:2001_true,
+
+2021-04-13 01:32:53,872 INFO DEFAULT_GROUP@@springcloudalibaba-seata-storage-service {SYNC} {IP-NEW} cluster: DEFAULT, new ips size: 1, content: [192.168.131.1:2002:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2021-04-13 01:32:53,872 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@springcloudalibaba-seata-storage-service, ips: 192.168.131.1:2002_true,
+
+2021-04-13 01:32:53,873 INFO DEFAULT_GROUP@@springcloudalibaba-seata-storage-service {SYNC} {IP-NEW} cluster: DEFAULT, new ips size: 1, content: [192.168.131.1:2002:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2021-04-13 01:32:53,873 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@springcloudalibaba-seata-storage-service, ips: 192.168.131.1:2002_true,
+
+2021-04-13 01:32:53,873 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@springcloudalibaba-seata-storage-service, ips: 192.168.131.1:2002_true,
+
+2021-04-13 01:32:53,873 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@springcloudalibaba-seata-storage-service, ips: 192.168.131.1:2002_true,
+
+2021-04-13 01:43:09,289 INFO {POS} {IP-DISABLED} valid: 192.168.131.1:2001@DEFAULT@DEFAULT_GROUP@@springcloudalibab-seata-order-service, region: unknown, msg: client timeout after 15000, last beat: 1618249370983
+
+2021-04-13 01:43:24,380 INFO DEFAULT_GROUP@@springcloudalibab-seata-order-service {SYNC} {IP-DEAD} cluster: DEFAULT, dead ips size: 1, content: [192.168.131.1:2001:unknown:DEFAULT_1.0_false_false_DEFAULT]
+
+2021-04-13 01:43:24,380 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@springcloudalibab-seata-order-service, ips: 
+
+2021-04-13 01:43:32,506 INFO DEFAULT_GROUP@@springcloudalibab-seata-order-service {SYNC} {IP-NEW} cluster: DEFAULT, new ips size: 1, content: [192.168.131.1:2001:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2021-04-13 01:43:32,506 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@springcloudalibab-seata-order-service, ips: 192.168.131.1:2001_true,
+
+2021-04-13 01:46:33,230 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@serverAddr, ips: 192.168.181.1:8091_true,
+
+2021-04-13 01:49:19,428 INFO {POS} {IP-DISABLED} valid: 192.168.131.1:2001@DEFAULT@DEFAULT_GROUP@@springcloudalibab-seata-order-service, region: unknown, msg: client timeout after 15000, last beat: 1618249743399
+
+2021-04-13 01:49:27,141 INFO service: DEFAULT_GROUP@@springcloudalibab-seata-order-service {POS} {IP-ENABLED} valid: 192.168.131.1:2001@DEFAULT, region: unknown, msg: client beat ok
+
+2021-04-13 01:50:36,557 INFO {POS} {IP-DISABLED} valid: 192.168.131.1:2003@DEFAULT@DEFAULT_GROUP@@springcloudalibaba-seata-account-service, region: unknown, msg: client timeout after 15000, last beat: 1618249817987
+
+2021-04-13 01:50:51,564 INFO DEFAULT_GROUP@@springcloudalibaba-seata-account-service {SYNC} {IP-DEAD} cluster: DEFAULT, dead ips size: 1, content: [192.168.131.1:2003:unknown:DEFAULT_1.0_false_false_DEFAULT]
+
+2021-04-13 01:50:51,564 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@springcloudalibaba-seata-account-service, ips: 
+
+2021-04-13 01:51:04,405 INFO DEFAULT_GROUP@@springcloudalibaba-seata-account-service {SYNC} {IP-NEW} cluster: DEFAULT, new ips size: 1, content: [192.168.131.1:2003:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2021-04-13 01:51:04,405 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@springcloudalibaba-seata-account-service, ips: 192.168.131.1:2003_true,
+
+2021-04-13 01:51:04,405 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@springcloudalibaba-seata-account-service, ips: 192.168.131.1:2003_true,
+
+2021-04-13 01:51:49,769 INFO DEFAULT_GROUP@@springcloudalibab-seata-order-service {SYNC} {IP-DEAD} cluster: DEFAULT, dead ips size: 1, content: [192.168.131.1:2001:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2021-04-13 01:51:49,769 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@springcloudalibab-seata-order-service, ips: 
+
+2021-04-13 01:52:03,802 INFO DEFAULT_GROUP@@springcloudalibab-seata-order-service {SYNC} {IP-NEW} cluster: DEFAULT, new ips size: 1, content: [192.168.131.1:2001:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2021-04-13 01:52:03,802 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@springcloudalibab-seata-order-service, ips: 192.168.131.1:2001_true,
+
+2021-04-13 01:52:03,802 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@springcloudalibab-seata-order-service, ips: 192.168.131.1:2001_true,
+
+2021-04-13 01:52:04,602 INFO DEFAULT_GROUP@@springcloudalibaba-seata-storage-service {SYNC} {IP-DEAD} cluster: DEFAULT, dead ips size: 1, content: [192.168.131.1:2002:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2021-04-13 01:52:04,602 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@springcloudalibaba-seata-storage-service, ips: 
+
+2021-04-13 01:52:04,602 INFO DEFAULT_GROUP@@springcloudalibaba-seata-storage-service {SYNC} {IP-DEAD} cluster: DEFAULT, dead ips size: 1, content: [192.168.131.1:2002:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2021-04-13 01:52:04,602 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@springcloudalibaba-seata-storage-service, ips: 
+
+2021-04-13 01:52:19,538 INFO DEFAULT_GROUP@@springcloudalibaba-seata-storage-service {SYNC} {IP-NEW} cluster: DEFAULT, new ips size: 1, content: [192.168.131.1:2002:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2021-04-13 01:52:19,538 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@springcloudalibaba-seata-storage-service, ips: 192.168.131.1:2002_true,
+
+2021-04-13 01:52:19,538 INFO DEFAULT_GROUP@@springcloudalibaba-seata-storage-service {SYNC} {IP-NEW} cluster: DEFAULT, new ips size: 1, content: [192.168.131.1:2002:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2021-04-13 01:52:19,538 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@springcloudalibaba-seata-storage-service, ips: 192.168.131.1:2002_true,
+
+2021-04-13 01:52:19,538 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@springcloudalibaba-seata-storage-service, ips: 192.168.131.1:2002_true,
+
+2021-04-13 01:52:19,538 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@springcloudalibaba-seata-storage-service, ips: 192.168.131.1:2002_true,
+
+2021-04-13 01:53:01,585 INFO {POS} {IP-DISABLED} valid: 192.168.131.1:2003@DEFAULT@DEFAULT_GROUP@@springcloudalibaba-seata-account-service, region: unknown, msg: client timeout after 15000, last beat: 1618249964554
+
+2021-04-13 01:53:16,592 INFO DEFAULT_GROUP@@springcloudalibaba-seata-account-service {SYNC} {IP-DEAD} cluster: DEFAULT, dead ips size: 1, content: [192.168.131.1:2003:unknown:DEFAULT_1.0_false_false_DEFAULT]
+
+2021-04-13 01:53:16,592 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@springcloudalibaba-seata-account-service, ips: 
+
+2021-04-13 01:53:31,583 INFO DEFAULT_GROUP@@springcloudalibaba-seata-account-service {SYNC} {IP-NEW} cluster: DEFAULT, new ips size: 1, content: [192.168.131.1:2003:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2021-04-13 01:53:31,583 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@springcloudalibaba-seata-account-service, ips: 192.168.131.1:2003_true,
+
+2021-04-13 01:53:31,584 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@springcloudalibaba-seata-account-service, ips: 192.168.131.1:2003_true,
+
+2021-04-13 01:56:21,757 INFO DEFAULT_GROUP@@springcloudalibab-seata-order-service {SYNC} {IP-DEAD} cluster: DEFAULT, dead ips size: 1, content: [192.168.131.1:2001:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2021-04-13 01:56:21,757 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@springcloudalibab-seata-order-service, ips: 
+
+2021-04-13 01:56:21,831 INFO DEFAULT_GROUP@@springcloudalibaba-seata-storage-service {SYNC} {IP-DEAD} cluster: DEFAULT, dead ips size: 1, content: [192.168.131.1:2002:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2021-04-13 01:56:21,831 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@springcloudalibaba-seata-storage-service, ips: 
+
+2021-04-13 01:56:21,831 INFO DEFAULT_GROUP@@springcloudalibaba-seata-storage-service {SYNC} {IP-DEAD} cluster: DEFAULT, dead ips size: 1, content: [192.168.131.1:2002:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2021-04-13 01:56:21,831 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@springcloudalibaba-seata-storage-service, ips: 
+
+2021-04-13 01:56:36,622 INFO {POS} {IP-DISABLED} valid: 192.168.131.1:2003@DEFAULT@DEFAULT_GROUP@@springcloudalibaba-seata-account-service, region: unknown, msg: client timeout after 15000, last beat: 1618250176716
+
+2021-04-13 01:56:46,984 INFO service: DEFAULT_GROUP@@springcloudalibaba-seata-account-service {POS} {IP-ENABLED} valid: 192.168.131.1:2003@DEFAULT, region: unknown, msg: client beat ok
+
+2021-04-13 01:56:46,984 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@springcloudalibaba-seata-account-service, ips: 192.168.131.1:2003_true,
+
+2021-04-13 01:56:59,323 INFO DEFAULT_GROUP@@springcloudalibab-seata-order-service {SYNC} {IP-NEW} cluster: DEFAULT, new ips size: 1, content: [192.168.131.1:2001:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2021-04-13 01:56:59,323 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@springcloudalibab-seata-order-service, ips: 192.168.131.1:2001_true,
+
+2021-04-13 01:56:59,324 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@springcloudalibab-seata-order-service, ips: 192.168.131.1:2001_true,
+
+2021-04-13 01:57:37,384 INFO DEFAULT_GROUP@@springcloudalibaba-seata-storage-service {SYNC} {IP-NEW} cluster: DEFAULT, new ips size: 1, content: [192.168.131.1:2002:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2021-04-13 01:57:37,384 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@springcloudalibaba-seata-storage-service, ips: 192.168.131.1:2002_true,
+
+2021-04-13 01:57:37,384 INFO DEFAULT_GROUP@@springcloudalibaba-seata-storage-service {SYNC} {IP-NEW} cluster: DEFAULT, new ips size: 1, content: [192.168.131.1:2002:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2021-04-13 01:57:37,384 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@springcloudalibaba-seata-storage-service, ips: 192.168.131.1:2002_true,
+
+2021-04-13 01:57:37,384 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@springcloudalibaba-seata-storage-service, ips: 192.168.131.1:2002_true,
+
+2021-04-13 01:57:37,385 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@springcloudalibaba-seata-storage-service, ips: 192.168.131.1:2002_true,
+
+2021-04-13 02:01:52,073 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@springcloudalibaba-seata-account-service, ips: 192.168.131.1:2003_true,
+
+2021-04-13 02:02:49,171 INFO {POS} {IP-DISABLED} valid: 192.168.131.1:2002@DEFAULT@DEFAULT_GROUP@@springcloudalibaba-seata-storage-service, region: unknown, msg: client timeout after 15000, last beat: 1618250552627
+
+2021-04-13 02:02:49,171 INFO {POS} {IP-DISABLED} valid: 192.168.131.1:2002@DEFAULT@DEFAULT_GROUP@@springcloudalibaba-seata-storage-service, region: unknown, msg: client timeout after 15000, last beat: 1618250552627
+
+2021-04-13 02:02:51,681 INFO {POS} {IP-DISABLED} valid: 192.168.131.1:2003@DEFAULT@DEFAULT_GROUP@@springcloudalibaba-seata-account-service, region: unknown, msg: client timeout after 15000, last beat: 1618250552104
+
+2021-04-13 02:02:54,573 INFO {POS} {IP-DISABLED} valid: 192.168.131.1:2001@DEFAULT@DEFAULT_GROUP@@springcloudalibab-seata-order-service, region: unknown, msg: client timeout after 15000, last beat: 1618250554610
+
+2021-04-13 02:03:04,178 INFO DEFAULT_GROUP@@springcloudalibaba-seata-storage-service {SYNC} {IP-DEAD} cluster: DEFAULT, dead ips size: 1, content: [192.168.131.1:2002:unknown:DEFAULT_1.0_false_false_DEFAULT]
+
+2021-04-13 02:03:04,178 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@springcloudalibaba-seata-storage-service, ips: 
+
+2021-04-13 02:03:04,178 INFO DEFAULT_GROUP@@springcloudalibaba-seata-storage-service {SYNC} {IP-DEAD} cluster: DEFAULT, dead ips size: 1, content: [192.168.131.1:2002:unknown:DEFAULT_1.0_false_false_DEFAULT]
+
+2021-04-13 02:03:04,178 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@springcloudalibaba-seata-storage-service, ips: 
+
+2021-04-13 02:03:06,685 INFO DEFAULT_GROUP@@springcloudalibaba-seata-account-service {SYNC} {IP-DEAD} cluster: DEFAULT, dead ips size: 1, content: [192.168.131.1:2003:unknown:DEFAULT_1.0_false_false_DEFAULT]
+
+2021-04-13 02:03:06,685 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@springcloudalibaba-seata-account-service, ips: 
+
+2021-04-13 02:03:09,576 INFO DEFAULT_GROUP@@springcloudalibab-seata-order-service {SYNC} {IP-DEAD} cluster: DEFAULT, dead ips size: 1, content: [192.168.131.1:2001:unknown:DEFAULT_1.0_false_false_DEFAULT]
+
+2021-04-13 02:03:09,576 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@springcloudalibab-seata-order-service, ips: 
+
