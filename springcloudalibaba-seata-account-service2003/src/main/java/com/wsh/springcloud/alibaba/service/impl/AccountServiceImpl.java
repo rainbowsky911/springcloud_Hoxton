@@ -1,6 +1,7 @@
 package com.wsh.springcloud.alibaba.service.impl;
 
 
+import com.wsh.springcloud.alibaba.domain.Account;
 import com.wsh.springcloud.alibaba.mapper.AccountMapper;
 import com.wsh.springcloud.alibaba.service.AccountService;
 import org.slf4j.Logger;
@@ -34,12 +35,17 @@ public class AccountServiceImpl implements AccountService {
         //feign调用默认调用超时时间为1秒，这里模拟休眠20秒，肯定调用超时
         //模拟超时异常，全局事务回滚
         try {
-          //  TimeUnit.SECONDS.sleep(20);
+            TimeUnit.SECONDS.sleep(20);
         } catch (Exception e) {
             e.printStackTrace();
         }
 
         accountMapper.decreaseAccount(userId, money);
         logger.info("账户服务扣减余额[decreaseAccount] end....." + new Date());
+    }
+
+    @Override
+    public Account getById(Long id) {
+        return  accountMapper.getById(id);
     }
 }

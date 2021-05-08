@@ -1,0 +1,36 @@
+server:
+  port: 2001
+spring:
+  application:
+    name: springcloudalibab-seata-order-service
+  cloud:
+    alibaba:
+      seata:
+        #自定义事务组名称需要与seata-server中的file.conf中配置的名称对应
+        tx-service-group: wsh_tx_group
+    nacos:
+      discovery:
+        server-addr: localhost:8848  #指定nacos服务器地址
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/seata_order
+    username: root
+    password: 514730
+    hikari:
+      connection-timeout: 50000
+    druid:
+      max-wait: 50000
+feign:
+  hystrix:
+    enabled: false   #开启feign对Hystrix断路器功能
+logging:
+  level:
+    io:
+      seata: info
+mybatis:
+  mapperLocations: classpath:mapper/*.xml   #指定mapper.xml文件路径
+ribbon:
+  #指的是建立连接所用的时间，适用于网络状况正常的情况下,两端连接所用的时间
+  ReadTimeout: 5000
+  #指的是建立连接后从服务器读取到可用资源所用的时间
+  ConnectTimeout: 5000

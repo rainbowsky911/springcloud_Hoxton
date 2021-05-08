@@ -18,4 +18,10 @@ public class AccountFeignClientFallback implements AccountFeignClient {
         logger.error("远程调用账户服务扣减余额[decreaseAccount]异常...");
         return null;
     }
+
+    @Override
+    public Object getAccount(Long id) {
+        logger.error("远程调用账户服务查询详情异常...");
+        return null;
+    }
 }

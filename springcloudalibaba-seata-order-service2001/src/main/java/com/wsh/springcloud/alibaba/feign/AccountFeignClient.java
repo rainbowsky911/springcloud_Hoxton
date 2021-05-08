@@ -2,6 +2,8 @@ package com.wsh.springcloud.alibaba.feign;
 
 import com.wsh.springcloud.alibaba.feign.fallback.AccountFeignClientFallback;
 import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -24,5 +26,9 @@ public interface AccountFeignClient {
      */
     @PostMapping(value = "/account/decreaseAccount")
     Object decreaseAccount(@RequestParam("userId") Long userId, @RequestParam("money") BigDecimal money);
+
+
+    @GetMapping(value = "/{id}")
+    Object getAccount(@PathVariable(value = "id") Long id);
 
 }
